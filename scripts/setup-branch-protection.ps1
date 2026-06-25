@@ -31,7 +31,8 @@ $payload = @{
 
 $tmp = New-TemporaryFile
 try {
-  Set-Content -LiteralPath $tmp -Value $payload -Encoding utf8NoBOM
+  $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+  [System.IO.File]::WriteAllText($tmp.FullName, $payload, $utf8NoBom)
   gh api `
     --method PUT `
     -H "Accept: application/vnd.github+json" `
