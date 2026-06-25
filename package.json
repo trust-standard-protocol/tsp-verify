@@ -1,0 +1,21 @@
+{
+  "name": "tsp-verify",
+  "version": "0.0.0",
+  "description": "Clean vNext TSP verifier scaffold.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "tsp",
+    "verification",
+    "evidence",
+    "provenance"
+  ],
+  "license": "Apache-2.0"
+}
+
