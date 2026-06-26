@@ -25,3 +25,6 @@ jobs:
 
       - name: Run claim lint
         run: node scripts/claim-lint.mjs
+
+      - name: Run tests
+        run: npm test
