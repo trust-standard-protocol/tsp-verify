@@ -36,9 +36,11 @@ export const buildLedgerDomain = (envelope) => {
 
 /**
  * Signature domain: what each Ed25519 envelope signature covers — excludes
- * the signatures array and the TSA token (timestamp is reduced to
- * { claimed, tsaUrl } so a later TSA attestation does not invalidate the
- * instance signature). Includes executionProvenance when present (ADR-0002).
+ * the signatures array and ALL TSA-derived fields. Per ADR-0014 (two-clock)
+ * the timestamp is reduced to { claimed } only: tsaUrl/tsaToken/tsaGenTime are
+ * populated (or overwritten) after signing, so re-admitting any of them to the
+ * domain reintroduces the real-TSA signature-invalidation bug. Includes
+ * executionProvenance when present (ADR-0002).
  */
 export const buildSignatureDomain = (envelope) => {
   const domain = {
@@ -53,7 +55,6 @@ export const buildSignatureDomain = (envelope) => {
   if (envelope.timestamp !== undefined) {
     domain.timestamp = {
       claimed: envelope.timestamp.claimed,
-      tsaUrl: envelope.timestamp.tsaUrl,
     };
   }
   if (envelope.executionProvenance !== undefined) {

@@ -41,16 +41,16 @@
     "tsaUrl": "https://placeholder.invalid/phase1"
   },
   "ledger": {
-    "id": "019eb088-a519-79f7-bd92-5bd3506e46d3",
+    "id": "019f056c-d025-7833-9072-b1cdd0a764d8",
     "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
-    "hash": "79373524092e25d82c19e018dda4c85afc7cf79543678ded2776272d4e8080fd"
+    "hash": "7b5b395aee403bd25d6b3baa649e1e0938c9ae12529e3cfc2ecff65a74de245d"
   },
   "signatures": [
     {
       "role": "instance",
       "algorithm": "ed25519",
       "keyRef": "https://fixtures.truststandardprotocol.test/.well-known/tsp-manifest.json#fixture-v3-i2",
-      "signature": "e4ZxXnKzJBEep5v5B7aySoKeEf6N9FMDc1Guv2HiV51bi2medR2g26ynw6ATPV7F93O1IjhxWZhGQChIALpqAA==",
+      "signature": "np65HUvOsOVA3vPTbZu+rBP5jy/v3gzQfQZlMiUrs4ztP37TcY4B5pmu9fsWA7Z8iWJgjFhAw3y66mVs+k9cCg==",
       "certChain": []
     }
   ],
