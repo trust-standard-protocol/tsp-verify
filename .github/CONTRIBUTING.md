@@ -5,9 +5,10 @@ All changes must be proposed through pull requests.
 
 ## Public Repository Boundary
 
-Do not add secrets, private customer data, private evidence packs, deployment
-runbooks, `_commercial`, `_tsp-recovery`, `.env`, API keys, Stripe keys, or
-tokens to public repositories.
+Do not add secrets, private customer data, customer evidence, private evidence
+packs, private ops material, deployment runbooks, `_commercial`,
+`_tsp-recovery`, `.env`, API keys, Stripe keys, or tokens to public
+repositories.
 
 ## Doctrine
 
