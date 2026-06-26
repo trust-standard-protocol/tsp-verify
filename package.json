@@ -1,21 +1,21 @@
 {
   "name": "tsp-verify",
-  "version": "0.0.0",
-  "description": "Clean vNext TSP verifier scaffold.",
+  "version": "0.1.1",
+  "description": "JavaScript port of the Trust Standard Protocol (TSP) verifier core: RFC 8785 canonicalization, trust envelope + manifest validation, Ed25519 local verification, and offline license-artifact verification (tsp.license.v1). Zero dependencies.",
   "type": "module",
   "main": "src/index.js",
-  "exports": {
-    ".": "./src/index.js"
-  },
+  "exports": { ".": "./src/index.js" },
+  "files": ["src", "LICENSE", "NOTICE", "README.md"],
+  "engines": { "node": ">=20" },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test test/*.test.mjs",
+    "conformance": "node conformance/run-conformance.mjs"
   },
-  "keywords": [
-    "tsp",
-    "verification",
-    "evidence",
-    "provenance"
-  ],
-  "license": "Apache-2.0"
+  "keywords": ["tsp", "trust", "provenance", "verification", "ed25519", "license", "canonicalization"],
+  "license": "Apache-2.0",
+  "repository": { "type": "git", "url": "git+https://github.com/trust-standard-protocol/tsp-verify.git" },
+  "homepage": "https://truststandardprotocol.com",
+  "author": "LexiCo AS <hello@truststandardprotocol.com>",
+  "dependencies": {},
+  "devDependencies": {}
 }
-

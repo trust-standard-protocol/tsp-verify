@@ -1,0 +1,36 @@
+name: Conformance
+
+# Runs the tsp-spec fixture suites through this JS port (tsp-verify): the v3.0
+# TrustEnvelope vectors AND the tsp.license.v1 vectors (ADR-0010), separate
+# checksum-pinned tracks. Goes red on any port/spec divergence or fixture drift.
+# This port is auditable, not normative -- normative authority is
+# trust-standard-protocol/tsp-spec (ADR-0008). A failure here is a bug in this port.
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: conformance-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fixtures:
+    name: fixture conformance (v3.0 + license)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run fixture conformance (v3.0 + license)
+        run: node conformance/run-conformance.mjs
